@@ -1,0 +1,372 @@
+:root {
+    --bg-color: #f9f8f6; /* Off-white background */
+    --text-color: #000000;
+    --orange-color: #e86127; /* Prominent orange */
+    --light-grey-text: #555555; /* For less prominent text */
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Overall padding around the flyer */
+}
+
+/* Flyer Container */
+.flyer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+    width: 100%;
+    max-width: 1200px; /* Max width of the entire flyer */
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    min-height: 900px; /* Minimum height to match flyer aspect ratio */
+}
+
+/* Column Styling */
+.left-column,
+.right-column {
+    flex: 1; /* Allows columns to grow and shrink */
+    padding: 40px 50px; /* Internal padding for columns */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content vertically */
+}
+
+.left-column {
+    flex-basis: 55%; /* Left column takes more space */
+    min-width: 300px; /* Ensure columns don't shrink too much */
+}
+
+.right-column {
+    flex-basis: 45%; /* Right column takes less space */
+    min-width: 300px; /* Ensure columns don't shrink too much */
+}
+
+/* Top Headers (PAUCEK AND LAGE, SEMINAR EVENT) */
+.top-header {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 50px; /* Space below headers */
+}
+
+.top-right-header {
+    text-align: right;
+    margin-bottom: 30px; /* Adjust spacing as needed */
+}
+
+/* Main Title Section (COPY WRITING SEMINAR) */
+.main-title-section {
+    margin-bottom: 60px;
+}
+
+.main-title-section h1 {
+    font-size: 5em; /* Large font size for main title */
+    line-height: 0.9;
+    font-weight: 900; /* Extra bold */
+    text-transform: uppercase;
+    word-break: break-word; /* Helps with long words on small screens */
+}
+
+.main-title-section h1 span {
+    display: block; /* Force each word onto its own line */
+}
+.word-seminar {
+    padding-left: 20px; /* Indent "SEMINAR" slightly as per template */
+}
+
+
+/* Event Details Section */
+.event-details-section {
+    margin-bottom: 60px;
+}
+
+.event-details-section .section-label {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+}
+
+.event-details-section .date {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.event-details-section .time,
+.event-details-section .address-line {
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: var(--light-grey-text); /* Slightly lighter text for address/time */
+}
+.event-details-section .address-line {
+    font-style: normal; /* Override default address italic style */
+}
+
+/* Features Section */
+.features-section {
+    margin-bottom: 60px;
+}
+
+.features-section .feature {
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--text-color);
+}
+.features-section .feature:last-of-type {
+    border-bottom: none; /* No border for the last feature */
+    margin-bottom: 0;
+}
+
+/* Info Footer */
+.info-footer {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--light-grey-text);
+}
+
+.info-footer a {
+    color: var(--light-grey-text);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.info-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Right Column - Orange Banner */
+.orange-banner {
+    background-color: var(--orange-color);
+    color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px; /* Space below banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; /* Ensure a decent height */
+}
+
+.orange-banner p {
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 80%; /* Constrain text width */
+    margin: 0 auto; /* Center text block */
+}
+
+.banner-arrow {
+    position: absolute;
+    top: 25px; /* Position from top of orange banner */
+    right: 25px; /* Position from right of orange banner */
+    width: 15px; /* Length of the lines */
+    height: 15px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    /* This creates the L-shape correctly within its own div */
+}
+
+/* Image Styling */
+.image-wrapper {
+    margin-bottom: 30px;
+}
+
+.image-wrapper:last-of-type {
+    margin-bottom: 0;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures images cover their area without distortion */
+}
+
+.speaker-image-wrapper {
+    position: relative;
+}
+
+.speaker-info {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    color: var(--text-color);
+    text-align: left;
+    max-width: 70%;
+}
+
+.speaker-info .speaker-name {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.speaker-info .speaker-title {
+    font-size: 0.9em;
+    font-weight: 400;
+    font-style: italic; /* As seen in the image */
+    color: var(--light-grey-text);
+    line-height: 1.2;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .flyer-container {
+        flex-direction: column; /* Stack columns vertically */
+        max-width: 700px; /* Adjust max-width for smaller overall presentation */
+        min-height: auto; /* Allow height to adjust */
+    }
+
+    .left-column,
+    .right-column {
+        flex-basis: 100%; /* Each column takes full width */
+        padding: 30px; /* Reduce padding */
+    }
+
+    .top-header {
+        margin-bottom: 30px;
+    }
+
+    .main-title-section {
+        margin-bottom: 40px;
+    }
+    .main-title-section h1 {
+        font-size: 4em; /* Adjust font size */
+    }
+
+    .event-details-section {
+        margin-bottom: 40px;
+    }
+    .event-details-section .date {
+        font-size: 2.5em; /* Adjust font size */
+    }
+
+    .features-section {
+        margin-bottom: 40px;
+    }
+
+    .orange-banner {
+        min-height: 200px; /* Adjust height */
+        margin-bottom: 20px;
+    }
+
+    .orange-banner p {
+        font-size: 1.1em;
+        max-width: 90%;
+    }
+
+    .image-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .speaker-info {
+        max-width: 60%; /* Adjust overlay size */
+        padding: 10px 15px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .left-column,
+    .right-column {
+        padding: 25px 20px;
+    }
+
+    .main-title-section h1 {
+        font-size: 3em;
+    }
+    .word-seminar {
+        padding-left: 0; /* Remove indent on small screens */
+    }
+
+    .event-details-section .date {
+        font-size: 2em;
+    }
+    .features-section .feature {
+        font-size: 0.9em;
+    }
+
+    .orange-banner {
+        padding: 30px;
+        min-height: 180px;
+    }
+    .orange-banner p {
+        font-size: 1em;
+    }
+
+    .speaker-info {
+        max-width: 80%; /* Give more room for text on smaller portrait images */
+        bottom: 5px;
+        right: 5px;
+        padding: 8px 12px;
+    }
+    .speaker-info .speaker-name {
+        font-size: 1em;
+    }
+    .speaker-info .speaker-title {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-column,
+    .right-column {
+        padding: 20px 15px;
+    }
+    .main-title-section h1 {
+        font-size: 2.5em;
+        line-height: 1;
+    }
+    .event-details-section .date {
+        font-size: 1.8em;
+    }
+    .top-header {
+        margin-bottom: 20px;
+    }
+    .orange-banner {
+        padding: 20px;
+        min-height: 150px;
+    }
+    .orange-banner p {
+        font-size: 0.9em;
+    }
+    .banner-arrow {
+        width: 10px;
+        height: 10px;
+        top: 15px;
+        right: 15px;
+    }
+}
